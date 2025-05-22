@@ -11,15 +11,16 @@ body {
   background: #FCF1E3;
 }
 
+main{
+  display: block;
+  padding-top: 140px;
+}
+
 a {
   list-style-type: none;
   margin: 0;
   padding: 0;
   color: #E8492A;
-}
-
-hero{
-  padding-top: 120px;
 }
 
 h1 {
@@ -142,7 +143,7 @@ h2 {
   transition: all 0.7s cubic-bezier(.4,0,.2,1);
   position: absolute;
   left: 50%;
-  top: 110px;
+  top: 10vh;
   padding: 0 1.5rem;
   z-index: 1001;
   box-sizing: border-box;
@@ -185,7 +186,7 @@ h2 {
   display: block;
   position: absolute;
   left: 50%;
-  top: 110px;
+  top: 10vh;
   transform: translateX(-50%) scale(1.5);
   padding: 0 1.5rem;
   z-index: 1001;
@@ -249,8 +250,20 @@ h2 {
   }
 }
 
+/* Center hero section vertically and horizontally at all sizes */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
 /* Ensure main content starts below the fixed navbar */
 main {
+  display: block;
   padding-top: 140px;
 }
 
@@ -332,6 +345,38 @@ main {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Fix hamburger menu stacking above content */
+.navbar-hamburger {
+  position: relative;
+  z-index: 1001;
+  margin: 0;
+}
+
+@media (max-width: 1249px) {
+  .navbar-hamburger {
+    position: absolute;
+    left: 2vw;
+    top: 15px;
+    z-index: 1101;
+  }
+  .navbar-section.navbar-left {
+    position: relative;
+  }
+  .navlinks {
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-hamburger {
+    left: 10px;
+    top: 10px;
+  }
+}
+
 /* Hamburger menu for mobile screens */
 @media (max-width: 1249px) {
   .navbar-hamburger {
@@ -405,6 +450,34 @@ main {
     width: 40px;
     height: 40px;
     margin-bottom: 1rem;
+  }
+}
+
+/* Lineart background for desktop */
+.lineart {
+  margin: 10px;
+  padding: 10px;
+  width: 100vw;
+  height: 1600px;
+  background: url('assets/bgsvg.svg') center center no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.lineart img {
+  display: none;
+}
+
+/* Lineart background for mobile */
+@media (max-width: 1024px) {
+  .lineart {
+    margin: 5px;
+    padding: 5px;
+    width: 100vw;
+    background-image: url('assets/bgsvg-mobile.svg');
+    height: 1400px;
   }
 }
 
