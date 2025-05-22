@@ -1,9 +1,39 @@
-background
-{
-  background-color: #FCF1E3;
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-color{
-    color: #FF2A00
+a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #FF2A00;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 4.75rem;
+  color: #FF2A00;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;  
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+span.sakha{
+  font-weight: 900;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  color: #FF2A00;
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  font-weight: 500;
 }
