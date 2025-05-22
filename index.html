@@ -1,29 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Sankha</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/favicon-branch.svg" type="image/svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Sankha</title>
 </head>
+
 <body>
-   <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Problem</a></li>
-            <li><a href="#">Solution</a></li>
-        </ul>
-   </nav> 
-   <main>
-    <div class="hero">
-  <h1>
-    Long commutes, heavy bags,<br />
-    and tired minds.<br />
-    <span class="sakha">Sakha</span> brings learning<br />
-    right to your neighborhood.
-  </h1>
-    <h2>When School Feels Far, Sakha Feels Near.</h2>
+  <nav class="navbar navbar-before" id="navbar">
+    <div class="navbar-section navbar-left">
+      <button class="navbar-hamburger" id="navbarHamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navlinks" id="navlinksMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Problem</a></li>
+        <li><a href="#">Solution</a></li>
+      </ul>
     </div>
-   </main>
+    <div class="navbar-section navbar-center">
+      <img src="assets/favicon-branch.svg" class="navbar-logo logo-before" id="navbarLogo" alt="Logo" />
+      <img src="assets/navbar-logo.svg" class="navbar-logo logo-after" id="navbarLogoScrolled" alt="Logo"
+        style="display:none;" />
+    </div>
+    <div class="navbar-section navbar-right">
+        <a href="#" class="navbar-account" aria-label="Profile">
+            <img src="assets/profile.svg" class="profile-icon" alt="Profile" />
+        </a>
+      <button class="navbar-login">Login</button>
+    </div>
+  </nav>
+  <main>
+    <div class="hero">
+      <img src="assets/favicon-branch.svg" alt="Logo" class="hero-logo-above" id="heroLogoAbove" />
+      <h1>
+        Long commutes, heavy bags,<br />
+        and tired minds.<br />
+        <span class="sakha">Sakha</span> brings learning<br />
+        right to your neighborhood.
+      </h1>
+      <h2>When School Feels Far, Sakha Feels Near.</h2>
+    </div>
+    <!-- TEMP: Add height for scroll testing -->
+    <div style="height: 1500px;"></div>
+  </main>
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      const logoBefore = document.getElementById('navbarLogo');
+      const logoAfter = document.getElementById('navbarLogoScrolled');
+      const heroLogoAbove = document.getElementById('heroLogoAbove');
+      if (window.scrollY > 20) {
+        navbar.classList.add('navbar-after');
+        navbar.classList.remove('navbar-before');
+        logoBefore.style.display = 'none';
+        logoAfter.style.display = 'block';
+        if(heroLogoAbove) heroLogoAbove.classList.add('scrolled-hero-logo');
+      } else {
+        navbar.classList.add('navbar-before');
+        navbar.classList.remove('navbar-after');
+        logoBefore.style.display = 'block';
+        logoAfter.style.display = 'none';
+        if(heroLogoAbove) heroLogoAbove.classList.remove('scrolled-hero-logo');
+      }
+    });
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('navbarHamburger');
+    const navlinksMenu = document.getElementById('navlinksMenu');
+    hamburger.addEventListener('click', function () {
+      navlinksMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
+
 </html>
