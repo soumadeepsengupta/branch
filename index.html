@@ -27,25 +27,88 @@
         style="display:none;" />
     </div>
     <div class="navbar-section navbar-right">
-        <a href="#" class="navbar-account" aria-label="Profile">
-            <img src="assets/profile.svg" class="profile-icon" alt="Profile" />
-        </a>
+      <a href="#" class="navbar-account" aria-label="Profile">
+        <img src="assets/profile.svg" class="profile-icon" alt="Profile" />
+      </a>
       <button class="navbar-login">Login</button>
     </div>
   </nav>
   <main>
     <div class="hero">
-       <h1>
+      <h1>
         Long commutes, heavy bags,<br />
         and tired minds.<br />
         <span class="sakha">Sakha</span> brings learning<br />
         right to your neighborhood.
       </h1>
       <h2>When School Feels Far, Sakha Feels Near.</h2>
-      </div>
-    <div class="lineart">
-      <img src="assets/bgsvg.svg" alt="." class="lineart" id="lineart">
     </div>
+    <div class="container">
+      <div class="problem">
+        <div class="problem-stats-container">
+          <div class="hashtag">
+            <div class="theproblem">#TheProblem</div>
+          </div>
+          <div class="problem-stats">
+            <div class="m-parent">
+              <div class="m">3.2 M</div>
+              <b class="students">STUDENTS</b>
+              <div class="spend-over-1">Spend over 1 hour commuting daily in urban India</div>
+            </div>
+            <div class="m-group">
+              <div class="m">8 kg</div>
+              <b class="students">AVERAGE BAG WEIGHT</b>
+              <div class="spend-over-1">Carried by children aged 11–14 (NCERT Report)</div>
+            </div>
+            <div class="m-container">
+              <div class="m">74%</div>
+              <b class="students">REPORTED FATIGUE</b>
+              <div class="spend-over-1">Among students after school due to travel and academic burden</div>
+            </div>
+            <div class="frame-div">
+              <div class="m">52%</div>
+              <b class="students">FEEL UNSAFE</b>
+              <div class="spend-over-1">Walking alone to distant tuition or school centers (Save the Children Report)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="problem-none">
+        </div>
+      </div>
+      <div class="solution">
+        <div class="solution-none">
+        </div>
+        <div class="solution-stats-container">
+          <div class="hashtag">
+            <div class="theproblem">#TheSolution</div>
+          </div>
+          <div class="solution-stats">
+            <div class="m-parent1">
+              <div class="m">15 mins</div>
+              <b class="students">AVERAGE WALK</b>
+              <div class="spend-over-1">To the nearest Sakha Learning Center</div>
+            </div>
+            <div class="m-parent2">
+              <div class="m">60%</div>
+              <b class="students">STRESS REDUCTION</b>
+              <div class="spend-over-1"> Reported by students using Sakha within 1 month</div>
+            </div>
+            <div class="m-parent3">
+              <div class="m">10+</div>
+              <b class="students">COMMUNITY HUBS</b>
+              <div class="spend-over-1"> Launched in Tier 2 cities within 3 months</div>
+            </div>
+            <div class="m-parent4">
+              <div class="m">93%</div>
+              <b class="students">ATTENDANCE BOOST</b>
+              <div class="spend-over-1">At Sakha centers with nearby access and shorter walk times</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <script>
     window.addEventListener('scroll', function () {
@@ -58,13 +121,13 @@
         navbar.classList.remove('navbar-before');
         logoBefore.style.display = 'none';
         logoAfter.style.display = 'block';
-        if(heroLogoAbove) heroLogoAbove.classList.add('scrolled-hero-logo');
+        if (heroLogoAbove) heroLogoAbove.classList.add('scrolled-hero-logo');
       } else {
         navbar.classList.add('navbar-before');
         navbar.classList.remove('navbar-after');
         logoBefore.style.display = 'block';
         logoAfter.style.display = 'none';
-        if(heroLogoAbove) heroLogoAbove.classList.remove('scrolled-hero-logo');
+        if (heroLogoAbove) heroLogoAbove.classList.remove('scrolled-hero-logo');
       }
     });
     // Hamburger menu toggle
