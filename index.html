@@ -19,6 +19,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Problem</a></li>
         <li><a href="#">Solution</a></li>
+        <li class="profile-link"><a href="#">My Profile</a></li>
       </ul>
     </div>
     <div class="navbar-section navbar-center">
@@ -30,7 +31,7 @@
       <a href="#" class="navbar-account" aria-label="Profile">
         <img src="assets/profile.svg" class="profile-icon" alt="Profile" />
       </a>
-      <button class="navbar-login">Login</button>
+      <button class="button">Login</button>
     </div>
   </nav>
   <main>
@@ -46,26 +47,26 @@
     <div class="container">
       <div class="problem">
         <div class="problem-stats-container">
-          <div class="hashtag">
+          <div class="button">
             <div class="theproblem">#TheProblem</div>
           </div>
           <div class="problem-stats">
-            <div class="m-parent">
+            <div class="stats">
               <div class="m">3.2 M</div>
               <b class="students">STUDENTS</b>
               <div class="spend-over-1">Spend over 1 hour commuting daily in urban India</div>
             </div>
-            <div class="m-group">
+            <div class="stats">
               <div class="m">8 kg</div>
               <b class="students">AVERAGE BAG WEIGHT</b>
               <div class="spend-over-1">Carried by children aged 11–14 (NCERT Report)</div>
             </div>
-            <div class="m-container">
+            <div class="stats">
               <div class="m">74%</div>
               <b class="students">REPORTED FATIGUE</b>
               <div class="spend-over-1">Among students after school due to travel and academic burden</div>
             </div>
-            <div class="frame-div">
+            <div class="stats">
               <div class="m">52%</div>
               <b class="students">FEEL UNSAFE</b>
               <div class="spend-over-1">Walking alone to distant tuition or school centers (Save the Children Report)
@@ -80,26 +81,26 @@
         <div class="solution-none">
         </div>
         <div class="solution-stats-container">
-          <div class="hashtag">
+          <div class="button">
             <div class="theproblem">#TheSolution</div>
           </div>
           <div class="solution-stats">
-            <div class="m-parent1">
+            <div class="stats4">
               <div class="m">15 mins</div>
               <b class="students">AVERAGE WALK</b>
               <div class="spend-over-1">To the nearest Sakha Learning Center</div>
             </div>
-            <div class="m-parent2">
+            <div class="stats4">
               <div class="m">60%</div>
               <b class="students">STRESS REDUCTION</b>
               <div class="spend-over-1"> Reported by students using Sakha within 1 month</div>
             </div>
-            <div class="m-parent3">
+            <div class="stats4">
               <div class="m">10+</div>
               <b class="students">COMMUNITY HUBS</b>
               <div class="spend-over-1"> Launched in Tier 2 cities within 3 months</div>
             </div>
-            <div class="m-parent4">
+            <div class="stats4">
               <div class="m">93%</div>
               <b class="students">ATTENDANCE BOOST</b>
               <div class="spend-over-1">At Sakha centers with nearby access and shorter walk times</div>
@@ -108,6 +109,7 @@
         </div>
       </div>
     </div>
+
 
   </main>
   <script>
@@ -133,6 +135,21 @@
     // Hamburger menu toggle
     const hamburger = document.getElementById('navbarHamburger');
     const navlinksMenu = document.getElementById('navlinksMenu');
+    const navbarAccount = document.querySelector('.navbar-account');
+    const profileLink = document.querySelector('.profile-link');
+
+    function handleHamburgerProfile() {
+      if (window.getComputedStyle(hamburger).display !== 'none') {
+        if (navbarAccount) navbarAccount.style.display = 'none';
+        if (profileLink) profileLink.style.display = 'block';
+      } else {
+        if (navbarAccount) navbarAccount.style.display = '';
+        if (profileLink) profileLink.style.display = 'none';
+      }
+    }
+    window.addEventListener('resize', handleHamburgerProfile);
+    document.addEventListener('DOMContentLoaded', handleHamburgerProfile);
+
     hamburger.addEventListener('click', function () {
       navlinksMenu.classList.toggle('open');
       hamburger.classList.toggle('open');
